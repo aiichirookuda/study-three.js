@@ -46,7 +46,8 @@ gui.add(box.rotation, "x").min(-3).max(3).step(0.01).name("rotation X");
 gui.add(box.rotation, "y").min(-3).max(3).step(0.01).name("rotation Y");
 gui.add(box.rotation, "z").min(-3).max(3).step(0.01).name("rotation Z");
 
-
+gui.add(box, "visible");
+gui.add(material, "wireframe");
 
 
 //ライト
