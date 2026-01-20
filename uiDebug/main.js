@@ -5,8 +5,6 @@ import GUI from 'https://cdn.jsdelivr.net/npm/lil-gui@0.21/+esm';
  * UIデバッグ
  */
 const gui = new GUI();
-console.log(gui);
-
 
 //シーン
 const scene = new THREE.Scene();
@@ -37,6 +35,19 @@ const material = new THREE.MeshBasicMaterial({
 //メッシュ化
 const box = new THREE.Mesh(boxGeometry, material);
 scene.add(box);
+
+// デバッグ
+// gui.add(box.position, "x", -3, 3, 0.01);
+gui.add(box.position, "x").min(-3).max(3).step(0.01).name("transform X");
+gui.add(box.position, "y").min(-3).max(3).step(0.01).name("transform Y");
+gui.add(box.position, "z").min(-3).max(3).step(0.01).name("transform Z");
+
+gui.add(box.rotation, "x").min(-3).max(3).step(0.01).name("rotation X");
+gui.add(box.rotation, "y").min(-3).max(3).step(0.01).name("rotation Y");
+gui.add(box.rotation, "z").min(-3).max(3).step(0.01).name("rotation Z");
+
+
+
 
 //ライト
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
