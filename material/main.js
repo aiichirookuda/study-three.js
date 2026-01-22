@@ -41,8 +41,15 @@ function init() {
   // material.opacity = 0.5;
   // material.transparent = true;
 
-  const material = new THREE.MeshNormalMaterial('');
+  // const material = new THREE.MeshNormalMaterial('');
   // material.flatShading = true;
+
+  const material = new THREE.MeshStandardMaterial();
+  material.color = new THREE.Color('#049ef4');
+  material.roughness = 0.34;
+  material.metalness = 0.64;
+  material.map = texture;
+  material.side = THREE.DoubleSide;
 
   // 光源を追加
   const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
