@@ -44,18 +44,22 @@ function init() {
   // const material = new THREE.MeshNormalMaterial('');
   // material.flatShading = true;
 
-  const material = new THREE.MeshStandardMaterial();
-  material.color = new THREE.Color('#049ef4');
-  material.roughness = 0.34;
-  material.metalness = 0.64;
-  material.map = texture;
-  material.side = THREE.DoubleSide;
+  // const material = new THREE.MeshStandardMaterial();
+  // material.color = new THREE.Color('#049ef4');
+  // material.roughness = 0.34;
+  // material.metalness = 0.64;
+  // material.map = texture;
+  // material.side = THREE.DoubleSide;
+
+  const material = new THREE.MeshPhongMaterial();
+  material.shininess = 100;
+  material.specular = new THREE.Color('#049ef4');
 
   // 光源を追加
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
   scene.add(ambientLight);
 
-  const pointLight = new THREE.PointLight(0xffffff, 1);
+  const pointLight = new THREE.PointLight(0xffffff, 0.7);
   pointLight.position.set(1, 2, 3);
   scene.add(pointLight);
 
