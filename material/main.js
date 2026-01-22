@@ -36,11 +36,13 @@ function init() {
   const texture = new THREE.TextureLoader().load("./textures/brick.jpg");
 
   // マテリアル
-  const material = new THREE.MeshBasicMaterial({ map: texture, color: 'red' });
-  material.side = THREE.DoubleSide;
-  material.opacity = 0.5;
-  material.transparent = true;
+  // const material = new THREE.MeshBasicMaterial({ map: texture, color: 'red' });
+  // material.side = THREE.DoubleSide;
+  // material.opacity = 0.5;
+  // material.transparent = true;
 
+  const material = new THREE.MeshNormalMaterial('');
+  material.flatShading = true;
 
   // メッシュ化
   sphere = new THREE.Mesh(sphereGeometry, material);
