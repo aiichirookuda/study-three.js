@@ -42,7 +42,18 @@ function init() {
   // material.transparent = true;
 
   const material = new THREE.MeshNormalMaterial('');
-  material.flatShading = true;
+  // material.flatShading = true;
+
+  // 光源を追加
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+  scene.add(ambientLight);
+
+  const pointLight = new THREE.PointLight(0xffffff, 1);
+  pointLight.position.set(1, 2, 3);
+  scene.add(pointLight);
+
+  const pointLightHelper = new THREE.PointLightHelper(pointLight, 1);
+  scene.add(pointLightHelper);
 
   // メッシュ化
   sphere = new THREE.Mesh(sphereGeometry, material);
